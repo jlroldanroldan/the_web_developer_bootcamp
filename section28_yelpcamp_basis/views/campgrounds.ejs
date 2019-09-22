@@ -12,17 +12,19 @@
     </header>
     
     
-    <h1>This is the campgrounds page!</h1>
+    <div class = "row text-center" style = "display:flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class = "col-lg-3 col-md-6">
+                <div class = "thumbnail">
+                    <img src = "<%= campground.image  %>">
+                    <div class = "caption">
+                        <h4> <%= campground.name %> </h4>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>  
     
-
-    <% campgrounds.forEach(function(campground){ %>
-        <div>
-        <h4><%= campground.name %></h4> 
-        <img src = "<%= campground.image  %>">
-        </div>
-    
-    <% }); %>
-    
+    <% include partials/footer %>
 </div>
 
-<% include partials/footer %>
